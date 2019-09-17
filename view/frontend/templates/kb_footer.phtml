@@ -1,0 +1,28 @@
+<?php
+	$allcollection = array();
+	$allcollection = $this->getCustomerReview();
+    $total_score = (isset($allcollection[0]['company_total_score'])) ? $allcollection[0]['company_total_score'] : "";
+    $total_reviews = (isset($allcollection[0]['total_reviews'])) ? $allcollection[0]['total_reviews'] : "";
+    $url = (isset($allcollection[0]['company_url'])) ? $allcollection[0]['company_url'] : "";
+    $_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+	$storeManager =$_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+	$currentStore = $storeManager->getStore();
+	$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+	$rating_percentage ="";
+	if(isset($allcollection[0]['company_total_score'])){
+        $rating = floatval($allcollection[0]['company_total_score']);
+        $rating_percentage = $rating*10;
+    }
+?>
+<div class="footer">
+	<h3>beoordelingen</h3>
+	<div class="footer_content">
+	  	<p>Klanten beoordelen ons met een <br /><?php echo $total_score; ?> na <a href="<?php echo $url; ?>" target="_blank"><?php echo $total_reviews ; ?> beoordelingen</a></p>
+		<img src="<?php echo $mediaUrl."wysiwyg/icon-kihoh.png";?>" alt=""  width="55" height="55"/>
+		<div class="kiyoh-shop-snippets">
+		    <div class="rating-box">
+		            <div class="rating" style="width:<?php echo $rating_percentage;?>%"></div>
+		    </div>
+		</div>
+	</div>
+</div>

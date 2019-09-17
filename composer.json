@@ -1,0 +1,24 @@
+{
+    "name": "alps/kiyoh",
+    "description": "Magento 2 Kiyoh review module",
+    "type": "magento2-module",
+    "license": "proprietary",
+	"version": "1.0.0",
+    "authors": [
+        {
+            "name": "Alps",
+            "email": "info@alpswebsolutions.com",
+			"homepage": "https://www.alpswebsolutions.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Alps\\Kiyoh\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
