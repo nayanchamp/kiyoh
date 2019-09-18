@@ -14,11 +14,12 @@
         $rating_percentage = $rating*10;
     }
 ?>
+<?php if($allcollection) : ?>
 <div class="footer">
-	<h3>beoordelingen</h3>
+	<h3><?php echo $this->getTitle(); ?></h3>
 	<div class="footer_content">
 	  	<p>Klanten beoordelen ons met een <br /><?php echo $total_score; ?> na <a href="<?php echo $url; ?>" target="_blank"><?php echo $total_reviews ; ?> beoordelingen</a></p>
-		<img src="<?php echo $mediaUrl."wysiwyg/icon-kihoh.png";?>" alt=""  width="55" height="55"/>
+		<img src="<?php echo $this->getViewFileUrl('Alps_Kiyoh::images/icon-kihoh.png'); ?>" alt=""  width="55" height="55"/>
 		<div class="kiyoh-shop-snippets">
 		    <div class="rating-box">
 		            <div class="rating" style="width:<?php echo $rating_percentage;?>%"></div>
@@ -26,3 +27,4 @@
 		</div>
 	</div>
 </div>
+<?php endif; ?>

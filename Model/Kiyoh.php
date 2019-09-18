@@ -1,6 +1,6 @@
 <?php
 namespace Alps\Kiyoh\Model;
-  
+
 class Kiyoh extends \Magento\Framework\Model\AbstractModel
 {
     
@@ -16,7 +16,7 @@ class Kiyoh extends \Magento\Framework\Model\AbstractModel
      *
      * @var string
      */
-    protected $_eventPrefix = 'alps_customerreview';
+    protected $_eventPrefix = 'alps_kiyoh';
 
     protected function _construct()
     {
